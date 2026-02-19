@@ -15,8 +15,12 @@ public interface Enemy {
     List<Ability> getAbilities();
     LootTable getLootTable();
 
-    void displayInfo();
 
+    void attack(Character target);
+    void takeDamage(int amount);
+    boolean isAlive();
+
+    void displayInfo();
     Enemy clone();
 
 }

@@ -9,7 +9,6 @@
 
     public class Goblin implements Enemy {
 
-        private LootTable LootTable ;
         private String name;
         private int health;
         private int damage;
