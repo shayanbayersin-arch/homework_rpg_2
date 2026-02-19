@@ -30,7 +30,9 @@ Now imagine:
 
 ```java
 // Clean, readable, self-documenting:
-Enemy dragon = new BossEnemyBuilder()
+E")
+    .build();
+// Every parameter is laEnemy dragon = new BossEnemyBuilder()
     .setName("Fire Dragon")
     .setHealth(50000)
     .setDamage(500)
@@ -42,9 +44,7 @@ Enemy dragon = new BossEnemyBuilder()
     .addPhase(1, 50000)
     .addPhase(2, 30000)
     .setLootTable(fireLoot)
-    .setAI("AGGRESSIVE")
-    .build();
-// Every parameter is labeled! Can't mix them up!
+    .setAI("AGGRESSIVbeled! Can't mix them up!
 ```
 
 ### Questions to Answer
