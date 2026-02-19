@@ -1,5 +1,8 @@
 package com.narxoz.rpg.equipment;
 
-public class Weapon {
-    
-}
+public interface Weapon {
+    int Damage();
+    void displayInfo();
+
+} 
+
