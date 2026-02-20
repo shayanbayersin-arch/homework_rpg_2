@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 
-public class DragonBoss implements Enemy {
+public class DragonBoss implements Enemy, Cloneable {
 
     private String name;
     private int health;
@@ -85,7 +85,9 @@ public class DragonBoss implements Enemy {
 
     @Override
     public void attack(Character target) {
-        if (!isAlive()) return;
+        if (!isAlive()) {
+            return;
+        }
 
         System.out.println(name + " breathes FIRE!");
         target.takeDamage(damage + 10);
@@ -118,5 +120,10 @@ public class DragonBoss implements Enemy {
         copy.setDefense(this.defense);
         copy.setSpeed(this.speed);
         return copy;
+    }
+
+    @Override
+    public Enemy clone() {
+        return cloneEnemy();
     }
 }

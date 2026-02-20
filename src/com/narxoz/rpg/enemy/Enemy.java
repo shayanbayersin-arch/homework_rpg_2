@@ -6,7 +6,7 @@ import com.narxoz.rpg.loot.LootTable;
 import java.util.List;
 
 
-public interface Enemy implements CloneableEnemy {
+public interface Enemy {
     int getHealth();
     int getDamage();
     int getDefense();
