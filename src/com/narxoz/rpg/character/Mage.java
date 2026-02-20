@@ -43,5 +43,26 @@ public class Mage implements Character {
         System.out.println("Agility: " + agility);
         System.out.println("Intelligence: " + intelligence);
     }
+    public void attack(com.narxoz.rpg.enemy.Enemy enemy) {
+      System.out.println(name + " attacks enemy");
+      enemy.takeDamage(this.strength);
+
+    }
+    @Override
+    public void takeDamage(int damage) {
+        health -= damage;
+        if (health < 0) health = 0;
+
+    }
+    @Override
+    public boolean isAlive() {
+    return health > 0;
+    }
+
+    @Override
+    public int getDamage() {
+    return strength;
+    }
+
     
 }
