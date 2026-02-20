@@ -35,7 +35,6 @@ public class Mage implements Character {
 
     @Override
     public void getStats() {
-        // This method can be used to return or display the character's stats in a specific format
         System.out.println(name + "'s Stats:");
         System.out.println("Health: " + health);
         System.out.println("Mana: " + mana);
@@ -64,5 +63,5 @@ public class Mage implements Character {
     return strength;
     }
 
-    
+
 }

@@ -91,6 +91,21 @@
 
         return copy;
     }
+    public void setHealth(int health) {
+    this.health = health;
+    }   
+
+    public void setDamage(int damage) {
+    this.damage = damage;
+    }
+
+    public void setDefense(int defense) {
+    this.defense = defense;
+    }
+
+    public void setSpeed(int speed) {
+    this.speed = speed;
+    }
 }
 
 

@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface Enemy {
     int getHealth();
-    int getDamge();
+    int getDamage();
     int getDefense();
     int getSpeed();
 
@@ -22,5 +22,6 @@ public interface Enemy {
 
     void displayInfo();
     Enemy clone();
+    void attack(com.narxoz.rpg.character.Character target);
 
 }

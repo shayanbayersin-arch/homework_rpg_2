@@ -1,9 +1,13 @@
 package com.narxoz.rpg.factory;
 
 import com.narxoz.rpg.character.Character;
+import com.narxoz.rpg.character.Mage;
 
-public interface MageFactory extends CharacterFactory {
-    public Character createCharacter(String name){
+
+public class  MageFactory extends CharacterFactory {
+
+    @Override
+    public Character createCharacter (String name){
         return new Mage(name);
     }
 

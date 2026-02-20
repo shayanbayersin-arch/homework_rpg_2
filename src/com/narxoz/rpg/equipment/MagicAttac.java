@@ -4,9 +4,9 @@ public class MagicAttac implements Weapon {
     private int damage;
     private String weaponInfo;
 
-    public MagicAttac(int damage) {
+    public MagicAttac(){
         this.damage = 30;
-        this.weaponInfo = "Magic Attack";
+        this.weaponInfo = "Magic Attack";   
     }
     public int Damage() {
         return damage;

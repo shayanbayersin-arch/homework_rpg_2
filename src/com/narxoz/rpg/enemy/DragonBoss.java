@@ -20,7 +20,7 @@ public class DragonBoss implements Enemy {
     private String element;
     private List<Ability> abilities;
     private Map<Integer, Integer> phases;
-    private LootTable lootTable;
+    private LootTable lootTable;   
     private String aiBehavior;
     private boolean canFly;
     private boolean hasBreathAttack;
@@ -78,5 +78,47 @@ public class DragonBoss implements Enemy {
 
     }
 
+    @Override
+    public int getDamage(){
+        return damage;
+
+    }
+    @Override
+    public int getDefense(){
+        return defense;
+    
+    }
+    @Override
+    public int getSpeed(){
+        return damage;
+
+    }
+    @Override 
+    public List<Ability> getAbilities() { return abilities; }
+
+    @Override
+    public LootTable getLootTable() { return lootTable; }
+
+    @Override
+    public void attack(com.narxoz.rpg.character.Character target) {
+    target.takeDamage(damage);
+    }
+
+    @Override
+    public void takeDamage(int amount) {
+    int real = Math.max(0, amount - defense);
+    health -= real;
+    }
+
+    @Override
+    public boolean isAlive() {
+    return health > 0;
+    }
+
+    @Override
+    public Enemy clone() {
+    return this; 
+    }
+    
     
 }

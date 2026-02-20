@@ -1,5 +1,7 @@
 package com.narxoz.rpg.character;
 
+import com.narxoz.rpg.enemy.Enemy;
+
 public class Warrior implements Character {
     private String name;
     private int health;
@@ -32,6 +34,30 @@ public class Warrior implements Character {
         System.out.println("Health: " + health);
         System.out.println("Strength: " + strength);
         System.out.println("Defense: " + defense);
+    }
+
+    @Override
+    public void attack(Enemy target) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'attack'");
+    }
+
+    @Override
+    public void takeDamage(int damage) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'takeDamage'");
+    }
+
+    @Override
+    public boolean isAlive() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'isAlive'");
+    }
+
+    @Override
+    public int getDamage() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getDamage'");
     }
 
     

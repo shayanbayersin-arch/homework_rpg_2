@@ -4,7 +4,7 @@ public class KatanaSword implements Weapon {
     private int damage;
     private String weaponType;
 
-    public KatanaSword(int damage) {
+    public KatanaSword() {
         this.damage = 25;
         this.weaponType = "Sword";
     }
@@ -20,8 +20,4 @@ public class KatanaSword implements Weapon {
         System.out.println("Weapon: " + weaponType);
         System.out.println("Damage: " + damage);
     }
-
-
-
-    
 }
