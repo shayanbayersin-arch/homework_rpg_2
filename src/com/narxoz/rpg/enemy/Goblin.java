@@ -106,6 +106,16 @@
     public void setSpeed(int speed) {
     this.speed = speed;
     }
+
+    @Override
+    public Enemy cloneEnemy() {
+    Goblin copy = new Goblin(this.name);
+    copy.setHealth(this.health);
+    copy.setDamage(this.damage);
+    copy.setDefense(this.defense);
+    copy.setSpeed(this.speed);
+    return copy;
+    }
 }
 
 

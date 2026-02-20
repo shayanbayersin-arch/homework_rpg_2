@@ -3,122 +3,32 @@ package com.narxoz.rpg.enemy;
 import com.narxoz.rpg.combat.Ability;
 import com.narxoz.rpg.loot.LootTable;
 
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Map;
-import java.util.HashMap;
 
-public class DragonBoss implements Enemy {
+public class DragonBoss extends Enemy {
 
-    private String name;
-    private int health;
-    private int damage;
-    private int defense;
-    private int speed;
-
-
-    private String element;
-    private List<Ability> abilities;
-    private Map<Integer, Integer> phases;
-    private LootTable lootTable;   
-    private String aiBehavior;
-    private boolean canFly;
-    private boolean hasBreathAttack;
-    private int wingspan;
-
-
-    public DragonBoss(String name, int health, int damage, int defense,
-                      int speed, String element,
-                      List<Ability> abilities,
-                      int phase1Threshold, int phase2Threshold, int phase3Threshold,
-                      LootTable lootTable, String aiBehavior,
-                      boolean canFly, boolean hasBreathAttack, int wingspan) {
-
-        this.name = name;
-        this.health = health;
-        this.damage = damage;
-        this.defense = defense;
-        this.speed = speed;
-        this.element = element;
-        this.abilities = abilities != null ? abilities : new ArrayList<>();
-        this.phases = new HashMap<>();
-        this.phases.put(1, phase1Threshold);
-        this.phases.put(2, phase2Threshold);
-        this.phases.put(3, phase3Threshold);
-        this.lootTable = lootTable;
-        this.aiBehavior = aiBehavior;
-        this.canFly = canFly;
-        this.hasBreathAttack = hasBreathAttack;
-        this.wingspan = wingspan;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getHealth() {
-        return health;
-    }
-
-    public void displayInfo() {
-        System.out.println("=== " + name + " (Dragon Boss) ===");
-        System.out.println("Health: " + health + " | Damage: " + damage
-                + " | Defense: " + defense + " | Speed: " + speed);
-        System.out.println("Element: " + element);
-        System.out.println("Abilities (" + abilities.size() + "):");
-        System.out.println("Boss Phases: " + phases.size());
-        for (Map.Entry<Integer, Integer> phase : phases.entrySet()) {
-            System.out.println("  Phase " + phase.getKey()
-                    + ": triggers at " + phase.getValue() + " HP");
-        }
-        System.out.println("AI Behavior: " + aiBehavior);
-        System.out.println("Can Fly: " + canFly
-                + " | Breath Attack: " + hasBreathAttack
-                + " | Wingspan: " + wingspan);
-
+    public DragonBoss(String name) {
+        super(name);
+        setHealth(300);
+        setDamage(40);
+        setDefense(20);
+        setSpeed(15);
     }
 
     @Override
-    public int getDamage(){
-        return damage;
+    public void attack(Character target) {
+        if (!isAlive()) return;
 
-    }
-    @Override
-    public int getDefense(){
-        return defense;
-    
-    }
-    @Override
-    public int getSpeed(){
-        return damage;
-
-    }
-    @Override 
-    public List<Ability> getAbilities() { return abilities; }
-
-    @Override
-    public LootTable getLootTable() { return lootTable; }
-
-    @Override
-    public void attack(com.narxoz.rpg.character.Character target) {
-    target.takeDamage(damage);
+        System.out.println(getName() + " breathes FIRE!");
+        target.takeDamage(getDamage() + 10);
     }
 
     @Override
-    public void takeDamage(int amount) {
-    int real = Math.max(0, amount - defense);
-    health -= real;
+    public Enemy cloneEnemy() {
+        DragonBoss copy = new DragonBoss(getName());
+        copy.setHealth(getHealth());
+        copy.setDamage(getDamage());
+        copy.setDefense(getDefense());
+        copy.setSpeed(getSpeed());
+        return copy;
     }
-
-    @Override
-    public boolean isAlive() {
-    return health > 0;
-    }
-
-    @Override
-    public Enemy clone() {
-    return this; 
-    }
-    
-    
 }
