@@ -14,6 +14,4 @@ public class MagicAttac implements Weapon {
     public void displayInfo() {
         System.out.println(weaponInfo);
     }
-
-    
 }

@@ -10,6 +10,4 @@ public interface Character {
     void takeDamage(int damage);
     boolean isAlive();
     int getDamage();
-
-
 }

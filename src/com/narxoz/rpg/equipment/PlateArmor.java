@@ -14,5 +14,4 @@ public class PlateArmor implements Armor {
     public String getArmorInfo() {
         return armorInfo;
     }
-    
 }

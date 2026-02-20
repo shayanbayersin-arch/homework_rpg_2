@@ -7,6 +7,4 @@ import com.narxoz.rpg.character.Character;
 public interface  ThemeFactory {
     Character createHero(String name);
     Enemy createEnemy();
-
-    
 }

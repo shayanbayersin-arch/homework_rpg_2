@@ -9,5 +9,4 @@ public interface LootTable {
     int getExperience();
     String getInfo();
     LootTable clone();
-
 }

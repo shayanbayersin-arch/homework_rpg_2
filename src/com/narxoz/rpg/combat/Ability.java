@@ -7,5 +7,4 @@ public interface Ability {
     int getPower();
     String getDescription();
     Ability clone();
-
 }

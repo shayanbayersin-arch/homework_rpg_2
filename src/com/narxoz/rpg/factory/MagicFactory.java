@@ -11,5 +11,4 @@ public class MagicFactory implements EquipmentFactory{
     public Armor createArmor() {
         return null;
     }
-
 }

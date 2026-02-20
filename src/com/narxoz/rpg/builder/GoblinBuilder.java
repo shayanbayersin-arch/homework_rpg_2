@@ -40,12 +40,12 @@ public class GoblinBuilder implements EnemyBuilder {
         return this;
     }
 
-    // ⭐ Factory Method
+   
     @Override
     public Enemy build() {
         Goblin goblin = new Goblin(name);
 
-        // ⚠️ нужны сеттеры в Goblin
+     
         goblin.setHealth(health);
         goblin.setDamage(damage);
         goblin.setDefense(defense);

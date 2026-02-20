@@ -10,5 +10,4 @@ public interface EnemyComponentFactory {
     List<Ability> createAbilities();
     LootTable createLootTable();
     String createAIBehavior();
-
 }

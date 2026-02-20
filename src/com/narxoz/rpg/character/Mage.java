@@ -62,6 +62,4 @@ public class Mage implements Character {
     public int getDamage() {
     return strength;
     }
-
-
 }

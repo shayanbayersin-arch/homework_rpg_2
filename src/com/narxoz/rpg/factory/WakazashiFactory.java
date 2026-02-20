@@ -11,6 +11,4 @@ public class WakazashiFactory implements EquipmentFactory {
     public Armor createArmor() {
         return null;
     }
-
-    
 }
