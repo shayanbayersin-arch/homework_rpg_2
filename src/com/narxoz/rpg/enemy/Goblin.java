@@ -1,14 +1,13 @@
-    package com.narxoz.rpg.enemy;
+   package com.narxoz.rpg.enemy;
 
-    import com.narxoz.rpg.combat.Ability;
-    import com.narxoz.rpg.loot.LootTable;
-    import com.narxoz.rpg.character.Character;
+import com.narxoz.rpg.combat.Ability;
+import com.narxoz.rpg.loot.LootTable;
+import com.narxoz.rpg.character.Character;
 
-    import java.util.List;
-    import java.util.ArrayList;
+import java.util.ArrayList;
+import java.util.List;
 
-
-    public class Goblin implements Enemy {
+public class Goblin implements Enemy {
 
     private String name;
     private int health;
@@ -27,7 +26,6 @@
         this.abilities = new ArrayList<>();
     }
 
-    
 
     public String getName() { return name; }
     public int getHealth() { return health; }
@@ -38,25 +36,28 @@
     public LootTable getLootTable() { return lootTable; }
 
 
+
+    public void setHealth(int health) { this.health = health; }
+    public void setDamage(int damage) { this.damage = damage; }
+    public void setDefense(int defense) { this.defense = defense; }
+    public void setSpeed(int speed) { this.speed = speed; }
+    public void setAbilities(List<Ability> abilities) { this.abilities = abilities; }
+    public void setLootTable(LootTable lootTable) { this.lootTable = lootTable; }
+
+
+
     @Override
     public void attack(Character target) {
         if (!isAlive()) return;
-
         System.out.println(name + " attacks!");
-        target.takeDamage(this.damage);
+        target.takeDamage(damage);
     }
 
     @Override
     public void takeDamage(int amount) {
-        int realDamage = Math.max(0, amount - defense);
-        health -= realDamage;
-
-        System.out.println(name + " takes " + realDamage + " damage!");
-
-        if (health <= 0) {
-            health = 0;
-            System.out.println(name + " is DEAD!");
-        }
+        int real = Math.max(0, amount - defense);
+        health -= real;
+        if (health < 0) health = 0;
     }
 
     @Override
@@ -64,16 +65,16 @@
         return health > 0;
     }
 
-
-
+    @Override
     public void displayInfo() {
         System.out.println("=== " + name + " (Goblin) ===");
         System.out.println("HP: " + health);
     }
 
+    // ===== Prototype =====
 
     @Override
-    public Enemy clone() {
+    public Enemy cloneEnemy() {
         Goblin copy = new Goblin(this.name);
         copy.health = this.health;
         copy.damage = this.damage;
@@ -91,36 +92,7 @@
 
         return copy;
     }
-    public void setHealth(int health) {
-    this.health = health;
-    }   
-
-    public void setDamage(int damage) {
-    this.damage = damage;
-    }
-
-    public void setDefense(int defense) {
-    this.defense = defense;
-    }
-
-    public void setSpeed(int speed) {
-    this.speed = speed;
-    }
-
-    @Override
-    public Enemy cloneEnemy() {
-    Goblin copy = new Goblin(this.name);
-    copy.setHealth(this.health);
-    copy.setDamage(this.damage);
-    copy.setDefense(this.defense);
-    copy.setSpeed(this.speed);
-    return copy;
-    }
-
-
 }
-
-
 
 
         

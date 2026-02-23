@@ -2,11 +2,14 @@ package com.narxoz.rpg.enemy;
 
 import com.narxoz.rpg.combat.Ability;
 import com.narxoz.rpg.loot.LootTable;
+import com.narxoz.rpg.character.Character;
+import com.narxoz.rpg.prototype.CloneableEnemy;
 
 import java.util.List;
 
+public interface Enemy extends CloneableEnemy {
 
-public interface Enemy {
+    String getName();
     int getHealth();
     int getDamage();
     int getDefense();
@@ -15,14 +18,8 @@ public interface Enemy {
     List<Ability> getAbilities();
     LootTable getLootTable();
 
-
     void attack(Character target);
     void takeDamage(int amount);
     boolean isAlive();
-
     void displayInfo();
-    Enemy clone();
-    void attack(com.narxoz.rpg.character.Character target);
-    Enemy cloneEnemy();
-
 }

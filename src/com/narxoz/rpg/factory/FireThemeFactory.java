@@ -15,3 +15,4 @@ public class FireThemeFactory implements ThemeFactory {
         return new GoblinBuilder().setName("Fire Goblin").setDamage(25).build();
     }
 }
+ 
