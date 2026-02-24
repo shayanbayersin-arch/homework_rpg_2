@@ -14,7 +14,7 @@ public class GoblinBuilder implements EnemyBuilder {
 
     private EnemyComponentFactory componentFactory;
 
-    public GoblinBuilder(EnemyComponentFactory factory) {
+    public GoblinBuilder() {
         this.componentFactory = factory;
     }
 

@@ -15,7 +15,7 @@ public class IceThemeFactory implements ThemeFactory {
 
     @Override
     public Enemy createEnemy() {
-        return new GoblinBuilder()
+        return new GoblinBuilder(null)
                 .setName("Ice Goblin")
                 .setDefense(12)
                 .build();

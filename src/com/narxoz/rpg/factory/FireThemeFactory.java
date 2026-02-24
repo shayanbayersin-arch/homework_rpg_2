@@ -12,7 +12,7 @@ public class FireThemeFactory implements ThemeFactory {
     }
     @Override
     public Enemy createEnemy() {
-        return new GoblinBuilder().setName("Fire Goblin").setDamage(25).build();
+        return new GoblinBuilder(null).setName("Fire Goblin").setDamage(25).build();
     }
 }
  
