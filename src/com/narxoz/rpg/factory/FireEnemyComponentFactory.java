@@ -23,6 +23,10 @@ public class FireEnemyComponentFactory  implements EnemyComponentFactory {
         return new SimpleLootTable(100 ,50);
     }
 
+    @Override
+    public String createAIBehavior() {
+        throw new UnsupportedOperationException("Unimplemented method 'createAIBehavior'");
+    }
 
-   
+
 }

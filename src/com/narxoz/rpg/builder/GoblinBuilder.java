@@ -13,9 +13,11 @@ public class GoblinBuilder implements EnemyBuilder {
     private int speed = 35;
 
     private EnemyComponentFactory componentFactory;
+    public GoblinBuilder(EnemyComponentFactory factory) {
+        this.componentFactory = factory;
+    }
 
     public GoblinBuilder() {
-        this.componentFactory = factory;
     }
 
     @Override
